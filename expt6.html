@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src ="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+ 
+<body ng-app="myapp">
+<div ng-controller="HelloController">
+<h2>Hello{{helloTo.title}}!</h2>
+ 
+</div>
+
+<div ng-app="" ng-init="firstName='John'">
+
+    <p>Input something in the input box:</p>
+    <p>Name: <input type="text" ng-model="firstName"></p>
+    <p>You wrote: {{ firstName }}</p>
+    
+    </div>
+<script>
+    angular.module("myapp",[])
+    .controller("HelloController",function($scope){
+        $scope.helloTo = {};
+        $scope.helloTo.title = "World, AngularJS";
+    });
+</script>
+   
+</body>
+</html>
